@@ -25,10 +25,7 @@ const nav = () => {
                     <li><Link href="/">Home</Link></li>
                     <li><Link href="/allproducts">All Products</Link></li>
                     <li><Link href="/overview">Overview</Link></li>
-                    <li>Category
-                        <div className={styles.dropdown}>
-                        </div>
-                    </li>
+                    <li>Category</li>
                 </ul>
             </div>
         </div>
