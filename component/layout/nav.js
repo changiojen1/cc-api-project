@@ -26,12 +26,12 @@ const nav = () => {
                     <li><Link href="/allproducts">All Products</Link></li>
                     <li><Link href="/overview">Overview</Link></li>
                     <li>Category
-                        <ul className={styles.dropdown}>
+                        <div className={styles.dropdown}>
                             <li>1</li>
                             <li>1</li>
                             <li>1</li>
                             <li>1</li>
-                        </ul>
+                        </div>
                     </li>
                 </ul>
             </div>
