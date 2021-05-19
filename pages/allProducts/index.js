@@ -1,4 +1,4 @@
-const hats = () => {
+const allProducts = () => {
     return (
         <div>
             
@@ -6,4 +6,4 @@ const hats = () => {
     )
 }
 
-export default hats
+export default allProducts
