@@ -27,10 +27,6 @@ const nav = () => {
                     <li><Link href="/overview">Overview</Link></li>
                     <li>Category
                         <div className={styles.dropdown}>
-                            <li>1</li>
-                            <li>1</li>
-                            <li>1</li>
-                            <li>1</li>
                         </div>
                     </li>
                 </ul>
