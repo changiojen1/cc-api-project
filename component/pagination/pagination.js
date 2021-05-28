@@ -10,13 +10,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PaginationRounded() {
+export default function Pagination() {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <Pagination count={10} shape="rounded" />
-      <Pagination count={10} variant="outlined" shape="rounded" />
     </div>
   );
 }

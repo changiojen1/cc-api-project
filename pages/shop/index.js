@@ -1,5 +1,6 @@
-import React from 'react'
+import { useState } from 'react'
 import CardList from '../../component/cloth/cardList'
+import styles from '../../styles/shop.module.scss'
 
 
 export async function getServerSideProps(){
@@ -14,10 +15,25 @@ export async function getServerSideProps(){
   }
 
 const ShopPage = (props) => {
+  const [shopData,setShopData] = useState(props.products)
+  const [pageNumber,setPageNumber] = useState(2)
+
+  const dataPerPage = 10
+  const preDatas = pageNumber * 10
+
+
+  const displayData = () => {
+    const data = shopData.slice(preDatas,preDatas+dataPerPage)
+    console.log(data);
+    return <CardList products={data}/>
+  } 
+
+
     return (
-        <div>
-            <CardList products={props.products}/>
-        </div>
+      <div className={styles.shopPage}>
+        <h1>SHOP</h1>
+        {displayData()}
+      </div>
     )
 }
 
