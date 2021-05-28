@@ -1,4 +1,4 @@
-const overview = () => {
+const Overview = () => {
     return (
         <div>
             
@@ -6,4 +6,4 @@ const overview = () => {
     )
 }
 
-export default overview
+export default Overview

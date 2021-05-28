@@ -1,8 +1,19 @@
-import Layout from '../component/layout/layout'
+import MenuContainer from '../component/home/MenuContainer'
 
-export default function Home() {
+export async function getServerSideProps(){
+  const response = await fetch("https://dry-wave-60207.herokuapp.com/api/categories")
+  const categories = await response.json()
+
+  return{
+    props:{
+      categories
+    }
+  }
+}
+
+export default function Home(props) {
+
   return (
-    <Layout>
-    </Layout>
+        <MenuContainer categories={props.categories} />
   )
 }

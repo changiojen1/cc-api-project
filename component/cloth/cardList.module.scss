@@ -1,0 +1,16 @@
+.shopPage h1 {
+  text-align: center;
+}
+
+.cardList {
+  display: grid;
+  justify-content: center;
+  row-gap: 30px;
+  margin-bottom: 30px;
+}
+
+@media screen {
+  .cardList {
+    grid-template-columns: repeat(auto-fit, 365px);
+  }
+}

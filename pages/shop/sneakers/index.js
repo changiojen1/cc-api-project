@@ -1,4 +1,4 @@
-const womens = () => {
+const Sneakers = () => {
     return (
         <div>
             
@@ -6,4 +6,4 @@ const womens = () => {
     )
 }
 
-export default womens
+export default Sneakers
