@@ -1,5 +1,5 @@
 import CardList from '../../../component/shop/cardList'
-import styles from '../../../styles/overview.module.scss'
+import styles from '../../../styles/page.module.scss'
 
 
 export async function getServerSideProps(){

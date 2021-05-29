@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import CardList from '../../component/shop/cardList'
-import styles from '../../styles/shop.module.scss'
+import styles from '../../styles/page.module.scss'
 
 ////////////Material UI//////////////
 import { makeStyles,createMuiTheme ,ThemeProvider} from '@material-ui/core/styles';
@@ -56,8 +56,8 @@ const ShopPage = (props) => {
   ////////////////////////////////////////////////////
 
     return (
-      <div className={styles.shopPage}>
-        <h1>SHOP</h1>
+      <div>
+        <h1 className={styles.title}>SHOP</h1>
         {cardListShow()}
         <Grid container justify = "center">
           <div className={classes.root}>
