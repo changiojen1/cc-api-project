@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import CardList from '../../component/cloth/cardList'
+import CardList from '../../component/shop/cardList'
 import styles from '../../styles/shop.module.scss'
 
 ////////////Material UI//////////////
@@ -23,30 +23,28 @@ export async function getServerSideProps(){
 
 const ShopPage = (props) => {
   const [shopData,setShopData] = useState(props.products)
-  const [pageNumber,setPageNumber] = useState(0)
+  const [prePageNum,setPrePageNum] = useState(0)
 
+  const preDatas = prePageNum * 10
   const dataPerPage = 10
-  const preDatas = pageNumber * 10
 
 
-  const displayData = () => {
+  const cardListShow = () => {
     const data = shopData.slice(preDatas,preDatas+dataPerPage)
+    console.log(typeof(data));
     return <CardList products={data}/>
   }
 
-  const changePageHandler = (event,newPage) => {
-    setPageNumber(newPage-1)
+  const changePageHandler = (event,selectedPage) => {
+    setPrePageNum(selectedPage-1)
   }
 
   ////////////Material UI Pagination Styles////////////
-  const useStyles = makeStyles((theme) => ({
+  const useStyles = makeStyles({
     root: {
-      '& > *': {
-        marginTop: theme.spacing(9),
-        marginBottom: theme.spacing(9),
-      },
+      margin:'20px 0'
     }
-  }));
+  });
   const theme = createMuiTheme({
     palette: {
       primary: {
@@ -60,14 +58,14 @@ const ShopPage = (props) => {
     return (
       <div className={styles.shopPage}>
         <h1>SHOP</h1>
-        {displayData()}
+        {cardListShow()}
         <Grid container justify = "center">
           <div className={classes.root}>
             <ThemeProvider theme={theme}>
               <Pagination
                 className={classes.root}
-                count={Math.ceil(shopData.length/dataPerPage)} 
-                page={pageNumber+1} 
+                count={Math.ceil(shopData.length/dataPerPage)}
+                page={prePageNum+1} 
                 shape='rounded'
                 onChange={changePageHandler}
                 size='large'

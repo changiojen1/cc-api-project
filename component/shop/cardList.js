@@ -7,11 +7,11 @@ const CardList = ({products}) => {
             {products.map((prod)=>{
                 return (
                     <Card 
-                    key={prod.id} p
-                    price={prod.price} 
-                    catId={prod.cat_id} 
-                    name={prod.name} 
-                    image={prod.remote_url}
+                        key={prod.id}
+                        price={prod.price} 
+                        catId={prod.cat_id} 
+                        name={prod.name} 
+                        image={prod.remote_url}
                     />
                 ) 
             })}
