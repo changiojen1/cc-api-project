@@ -31,7 +31,7 @@ const ShopPage = (props) => {
 
   const cardListShow = () => {
     const data = shopData.slice(preDatas,preDatas+dataPerPage)
-    console.log(typeof(data));
+    // console.log(typeof(data));
     return <CardList products={data}/>
   }
 

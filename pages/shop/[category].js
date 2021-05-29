@@ -16,7 +16,21 @@ const CategoryPage = (props) => {
     )
 }
 
-export async function getServerSideProps({params}){
+export async function getStaticPaths(){
+    return{
+      paths:[
+          {params:{category:'hats'}},
+          {params:{category:'jackets'}},
+          {params:{category:'mens'}},
+          {params:{category:'womens'}},
+          {params:{category:'sneakers'}}
+      ],
+      
+      fallback:false
+    }
+}
+
+export async function getStaticProps({params}){
     
     const response = await fetch(`https://dry-wave-60207.herokuapp.com/api/shop/${params['category']}`)
     const products = await response.json()
@@ -26,6 +40,25 @@ export async function getServerSideProps({params}){
         products
       }
     }
-  }
+}
+// export async function getServerSideProps({params}){
+    
+//     const response = await fetch(`https://dry-wave-60207.herokuapp.com/api/shop/${params['category']}`)
+    
+//     if (!response.ok) {
+//         return {
+//           notFound: true,
+//         }
+//       }
+
+//     const products = await response.json()
+  
+//     return{
+//       props:{
+//         products
+//       }
+//     }
+// }
+
 
 export default CategoryPage

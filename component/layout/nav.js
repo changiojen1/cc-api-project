@@ -52,26 +52,36 @@ const nav = () => {
             <div className={`${styles.navbar_links} ${menuToggle?styles.active:""}`}>
             {/* <div className="navbar_links active"> */}
                 <ul>
-                    <li><Link href="/">Home</Link></li>
-                    <li><Link href="/shop">Shop</Link></li>
-                    <li><Link href="/shop/overview">Overview</Link></li>
+                    <li><Link href="/"><a>Home</a></Link></li>
+                    <li><Link href="/shop"><a>Shop</a></Link></li>
+                    <li><Link href="/shop/overview"><a>Overview</a></Link></li>
                     <li ref={toggleRef} onClick={cToggle} id={styles.navCat}>Category <span>></span>
                         <div className={`${styles.dropdown} ${catToggle?styles.catShow:""}`} >
-                            <a className={styles.ddItem} href="/shop/hats">
-                                <img src="/hat.png" width={40} height={40}/><span> Hats</span>
-                            </a>
-                            <a className={styles.ddItem} href="/shop/jackets">
-                                <img src="/jacket.png" width={40} height={40}/><span>Jackets</span>
-                            </a>
-                            <a className={styles.ddItem} href="/shop/sneakers">
-                                <img src="/sneaker.png" width={40} height={40}/><span>Sneakers</span>
-                            </a>
-                            <a className={styles.ddItem} href="/shop/womens">
-                                <img src="/women.png" width={40} height={40}/><span>Womens</span>
-                            </a>
-                            <a className={styles.ddItem} href="/shop/mens">
-                                <img src="/men.png" width={40} height={40}/><span>Mens</span>
-                            </a>
+                            <Link href="/shop/hats">
+                                <a className={styles.ddItem}>
+                                    <img src="/hat.png" width={40} height={40}/><span> Hats</span>
+                                </a>
+                            </Link>
+                            <Link href="/shop/jackets">
+                                <a className={styles.ddItem}>
+                                    <img src="/jacket.png" width={40} height={40}/><span>Jackets</span>
+                                </a>
+                            </Link>
+                            <Link href="/shop/sneakers">
+                                <a className={styles.ddItem}>
+                                    <img src="/sneaker.png" width={40} height={40}/><span>Sneakers</span>
+                                </a>
+                            </Link>
+                            <Link href="/shop/womens">
+                                <a className={styles.ddItem}>
+                                    <img src="/women.png" width={40} height={40}/><span>Womens</span>
+                                </a>
+                            </Link>
+                            <Link href="/shop/mens">
+                                <a className={styles.ddItem}>
+                                    <img src="/men.png" width={40} height={40}/><span>Mens</span>
+                                </a>
+                            </Link>
                         </div>
                     </li>
                 </ul>
