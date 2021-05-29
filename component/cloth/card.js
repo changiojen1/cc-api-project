@@ -3,8 +3,9 @@ import styles from './card.module.scss'
 
 const card = ({price,name,catId,image}) => {
     const [cardHover, setCardHover] = useState(false)
-    const hoverHandler = () =>{
-        setCardHover(!cardHover)
+
+    const hoverHandler = (arg) =>{
+        setCardHover(arg)
     }
 
     const cat=["Hats","Jackets","Sneakers","Wemons","Mens"]
@@ -15,8 +16,8 @@ const card = ({price,name,catId,image}) => {
                 <div 
                     id={styles.product_card} 
                     className={`${cardHover?styles.animate:""}`} 
-                    onMouseEnter={hoverHandler} 
-                    onMouseLeave={hoverHandler}
+                    onMouseEnter={()=>{hoverHandler(true)}} 
+                    onMouseLeave={()=>{hoverHandler(false)}}
                 >
                     <div id={styles.product_front}>
                         <div className={styles.shadow}></div>
